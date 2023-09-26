@@ -1,0 +1,5 @@
+Z:\WINNINGALLTHEMONEY\obj\Debug\net7.0\WINNINGALLTHEMONEY.csproj.AssemblyReference.cache
+Z:\WINNINGALLTHEMONEY\obj\Debug\net7.0\WINNINGALLTHEMONEY.GeneratedMSBuildEditorConfig.editorconfig
+Z:\WINNINGALLTHEMONEY\obj\Debug\net7.0\WINNINGALLTHEMONEY.AssemblyInfoInputs.cache
+Z:\WINNINGALLTHEMONEY\obj\Debug\net7.0\WINNINGALLTHEMONEY.AssemblyInfo.cs
+Z:\WINNINGALLTHEMONEY\obj\Debug\net7.0\WINNINGALLTHEMONEY.csproj.CoreCompileInputs.cache
