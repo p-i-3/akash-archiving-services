@@ -22,6 +22,7 @@ namespace proj
                 webBuilder.ConfigureServices((hostContext, services) =>
                 {
                     services.AddSingleton<IMongoDbConnector, MongoDbConnector>();
+                    services.AddSingleton<IAkashApiConnector,AkashApiConnector>();
                     services.AddControllers();
                     services.AddSwaggerGen(options =>
                     {
