@@ -7,6 +7,9 @@ namespace Proj.Services
 {
     public interface IMongoDbConnector
     {
-        public  Task<DummyData[]> GetDummyData();
+        public  Task<OwnerDto[]> GetOwners();
+        public Task<HostDto[]> GetHosts();
+
+        public Task<HostDto[]> GetActiveHosts();
     }
 }

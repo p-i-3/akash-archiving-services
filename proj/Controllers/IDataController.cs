@@ -5,7 +5,9 @@ namespace Proj.Controllers
 {
     public interface IDataController
     {
-        public  Task<ActionResult> DummyDataRequest();
+        public  Task<ActionResult> OwnerDataRequestAll();
+        public  Task<ActionResult> HostDataRequestAll();
+        public  Task<ActionResult> HostDataRequestActive();
 
     }
 }

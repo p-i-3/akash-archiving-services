@@ -7,6 +7,7 @@ namespace Proj.Services
 {
     public interface IAkashApiConnector
     {
-        public Task<DummyData[]> GetDummyData();
+        public Task<HostDto[]> GetHostData(OwnerDto[] ownerDtos,string batchId);
+        public Task<OwnerDto[]> GetOwnerData(string batchId);
     }
 }

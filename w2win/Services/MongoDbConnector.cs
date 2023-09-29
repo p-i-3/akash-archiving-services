@@ -15,12 +15,12 @@ namespace Proj.Services
             _client = new MongoClient(settings);
         }
 
-        public async Task<bool> UploadDummyData(DummyData[] dummyDatas)
+        public async Task<bool> UploadHosts(HostDto[] hosts)
         {
             try
             {
-                var collection = _client.GetDatabase("TogaProj").GetCollection<DummyData>("DummyData");
-                await collection.InsertManyAsync(dummyDatas);
+                var collection = _client.GetDatabase("TogaProjse").GetCollection<HostDto>("Hosts");
+                await collection.InsertManyAsync(hosts);
                 return true;
             }
             catch (Exception e)
@@ -31,5 +31,20 @@ namespace Proj.Services
 
         }
 
+
+        public async Task<bool> UploadOwners(OwnerDto[] owners)
+        {
+            try
+            {
+                var collection = _client.GetDatabase("TogaProjse").GetCollection<OwnerDto>("Owners");
+                await collection.InsertManyAsync(owners);
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
+        }
     }
 }

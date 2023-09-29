@@ -11,7 +11,8 @@ namespace Proj.Controllers
     {
         private readonly IMongoDbConnector _mongoConnector;
         private readonly IAkashApiConnector _akashApitConnector;
-        public DataControllerForTesting(IMongoDbConnector mongoDbConnector,IAkashApiConnector akashApiConnector){
+        public DataControllerForTesting(IMongoDbConnector mongoDbConnector, IAkashApiConnector akashApiConnector)
+        {
             _mongoConnector = mongoDbConnector;
             _akashApitConnector = akashApiConnector;
         }
@@ -22,9 +23,12 @@ namespace Proj.Controllers
         {
             try
             {
-                var stupidData = await _akashApitConnector.GetDummyData();
-                await _mongoConnector.UploadDummyData(stupidData);
-                return Ok(stupidData);
+                var batchId = Guid.NewGuid().ToString();
+                var owners = await _akashApitConnector.GetOwnerData(batchId);
+                var hosts = await _akashApitConnector.GetHostData(owners,batchId);
+                await _mongoConnector.UploadOwners(owners);
+                await _mongoConnector.UploadHosts(hosts);
+                return Ok(JsonSerializer.Serialize(new { ow = owners, ho = hosts }));
             }
             catch (Exception e)
             {

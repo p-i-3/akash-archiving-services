@@ -7,6 +7,8 @@ namespace Proj.Services
 {
     public interface IMongoDbConnector
     {
-        public  Task<bool> UploadDummyData(DummyData[] dummyDatas);
+        public Task<bool> UploadOwners(OwnerDto[] owners);
+        public Task<bool> UploadHosts(HostDto[] hosts);
+
     }
 }
