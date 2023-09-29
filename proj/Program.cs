@@ -9,6 +9,7 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 using Swashbuckle.AspNetCore.SwaggerUI;
 using System.Reflection;
 using Microsoft.OpenApi.Models;
+using Microsoft.Extensions.Configuration;
 namespace proj
 {
     class Program
@@ -21,6 +22,12 @@ namespace proj
 
                 webBuilder.ConfigureServices((hostContext, services) =>
                 {
+                    var config = new ConfigurationBuilder()
+                    .AddEnvironmentVariables()
+                    .Build();
+                    var abc = config.GetSection("MongoDb_Connection_String");
+                    var connectionString = config["MongoDb_Connection_String"];
+                    services.AddSingleton<ISecretsHolder,SecretsHolder>();
                     services.AddSingleton<IMongoDbConnector, MongoDbConnector>();
                     services.AddControllers();
                     services.AddSwaggerGen(options =>
@@ -34,6 +41,13 @@ namespace proj
                         var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                         options.IncludeXmlComments(xmlPath);
                     });
+                    services.AddCors(options =>
+                    {
+                        options.AddPolicy("AllowAnyOrigin",
+                            builder => builder.AllowAnyOrigin()
+                            .AllowAnyMethod()
+                            .AllowAnyHeader());
+                    });
 
                 })
                 .ConfigureAppConfiguration((hostContext, config) =>
@@ -44,20 +58,21 @@ namespace proj
                 {
 
                 })
-                .UseUrls("http://localhost:6942")
+                .UseUrls("http://0.0.0.0:6942")
                 .Configure(app =>
                 {
                     app.UseRouting();
+                    app.UseCors("AllowAnyOrigin");
                     app.UseEndpoints(endpoints =>
                     {
                         endpoints.MapControllers();
                     }).UseSwagger()
-                    .UseSwaggerUI(options => {
-                        options.SwaggerEndpoint("/swagger/v1/swagger.json","OUR API");
+                    .UseSwaggerUI(options =>
+                    {
+                        options.SwaggerEndpoint("/swagger/v1/swagger.json", "OUR API");
                     });
                 });
             }).Build();
-
             host.Run();
         }
     }

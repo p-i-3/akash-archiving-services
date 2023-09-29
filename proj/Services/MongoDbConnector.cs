@@ -1,4 +1,5 @@
 using System.Text.Json;
+using Microsoft.Extensions.Options;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using Proj.Models;
@@ -7,11 +8,11 @@ namespace Proj.Services
 {
     public class MongoDbConnector : IMongoDbConnector
     {
-        private const string _connectionString = "mongodb+srv://bigdickjohn:2jrCQBpK89HaJDbZ@testtest.svh09.mongodb.net/?authSource=admin";
+
         private readonly MongoClient _client;
-        public MongoDbConnector()
+        public MongoDbConnector(ISecretsHolder secrets)
         {
-            var settings = MongoClientSettings.FromConnectionString(_connectionString);
+            var settings = MongoClientSettings.FromConnectionString(secrets.GetSecret());
             _client = new MongoClient(settings);
         }
 
