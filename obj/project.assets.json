@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "Z:\\akash-archiving-services\\akash-archiving-services\\WINNINGALLTHEMONEY.csproj",
-      "projectName": "WINNINGALLTHEMONEY",
-      "projectPath": "Z:\\akash-archiving-services\\akash-archiving-services\\WINNINGALLTHEMONEY.csproj",
+      "projectUniqueName": "Z:\\akash-archiving-services\\akash-archiving-services\\Akash-Archiving-Service.csproj",
+      "projectName": "Akash-Archiving-Service",
+      "projectPath": "Z:\\akash-archiving-services\\akash-archiving-services\\Akash-Archiving-Service.csproj",
       "packagesPath": "C:\\Users\\sebas\\.nuget\\packages\\",
       "outputPath": "Z:\\akash-archiving-services\\akash-archiving-services\\obj\\",
       "projectStyle": "PackageReference",

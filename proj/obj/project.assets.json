@@ -4276,11 +4276,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "Z:\\WINNINGALLTHEMONEY\\proj\\proj.csproj",
-      "projectName": "proj",
-      "projectPath": "Z:\\WINNINGALLTHEMONEY\\proj\\proj.csproj",
+      "projectUniqueName": "Z:\\akash-archiving-services\\akash-archiving-services\\proj\\proj.csproj",
+      "projectName": "AkashDataAPi",
+      "projectPath": "Z:\\akash-archiving-services\\akash-archiving-services\\proj\\proj.csproj",
       "packagesPath": "C:\\Users\\sebas\\.nuget\\packages\\",
-      "outputPath": "Z:\\WINNINGALLTHEMONEY\\proj\\obj\\",
+      "outputPath": "Z:\\akash-archiving-services\\akash-archiving-services\\proj\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
