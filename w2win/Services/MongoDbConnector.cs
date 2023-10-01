@@ -16,7 +16,6 @@ namespace Proj.Services
 
         public async Task<bool> UploadHosts(HostDto[] hosts)
         {
-            return true;
             try
             {
                 var collection = _client.GetDatabase("TogaProjse").GetCollection<HostDto>("Hosts");
@@ -34,7 +33,6 @@ namespace Proj.Services
 
         public async Task<bool> UploadOwners(OwnerDto[] owners)
         {
-            return true;
             try
             {
                 var collection = _client.GetDatabase("TogaProjse").GetCollection<OwnerDto>("Owners");
