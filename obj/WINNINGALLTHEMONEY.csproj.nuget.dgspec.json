@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "Z:\\WINNINGALLTHEMONEY\\WINNINGALLTHEMONEY.csproj": {}
+    "Z:\\akash-archiving-services\\akash-archiving-services\\WINNINGALLTHEMONEY.csproj": {}
   },
   "projects": {
-    "Z:\\WINNINGALLTHEMONEY\\WINNINGALLTHEMONEY.csproj": {
+    "Z:\\akash-archiving-services\\akash-archiving-services\\WINNINGALLTHEMONEY.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\WINNINGALLTHEMONEY\\WINNINGALLTHEMONEY.csproj",
+        "projectUniqueName": "Z:\\akash-archiving-services\\akash-archiving-services\\WINNINGALLTHEMONEY.csproj",
         "projectName": "WINNINGALLTHEMONEY",
-        "projectPath": "Z:\\WINNINGALLTHEMONEY\\WINNINGALLTHEMONEY.csproj",
+        "projectPath": "Z:\\akash-archiving-services\\akash-archiving-services\\WINNINGALLTHEMONEY.csproj",
         "packagesPath": "C:\\Users\\sebas\\.nuget\\packages\\",
-        "outputPath": "Z:\\WINNINGALLTHEMONEY\\obj\\",
+        "outputPath": "Z:\\akash-archiving-services\\akash-archiving-services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

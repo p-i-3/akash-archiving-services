@@ -7,16 +7,16 @@ namespace Proj.Services
 {
     public class MongoDbConnector : IMongoDbConnector
     {
-        private const string _connectionString = "mongodb+srv://bigdickjohn:2jrCQBpK89HaJDbZ@testtest.svh09.mongodb.net/?authSource=admin";
         private readonly MongoClient _client;
-        public MongoDbConnector()
+        public MongoDbConnector(ISecretsHolder secrets)
         {
-            var settings = MongoClientSettings.FromConnectionString(_connectionString);
+            var settings = MongoClientSettings.FromConnectionString(secrets.GetSecret());
             _client = new MongoClient(settings);
         }
 
         public async Task<bool> UploadHosts(HostDto[] hosts)
         {
+            return true;
             try
             {
                 var collection = _client.GetDatabase("TogaProjse").GetCollection<HostDto>("Hosts");
@@ -34,6 +34,7 @@ namespace Proj.Services
 
         public async Task<bool> UploadOwners(OwnerDto[] owners)
         {
+            return true;
             try
             {
                 var collection = _client.GetDatabase("TogaProjse").GetCollection<OwnerDto>("Owners");

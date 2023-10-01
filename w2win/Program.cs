@@ -21,6 +21,7 @@ namespace proj
 
                 webBuilder.ConfigureServices((hostContext, services) =>
                 {
+                    services.AddSingleton<ISecretsHolder,SecretsHolder>();
                     services.AddSingleton<IMongoDbConnector, MongoDbConnector>();
                     services.AddSingleton<IAkashApiConnector,AkashApiConnector>();
                     services.AddControllers();

@@ -10,40 +10,49 @@ namespace Proj.Services
     public class AkashApiConnector : IAkashApiConnector
     {
         private readonly HttpClient _httpClient;
-        
+        private readonly HttpClient _httpClient2;
+
         public AkashApiConnector()
         {
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11;
             HttpClientHandler clientHandler = new HttpClientHandler
             {
-                ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; }
+                AllowAutoRedirect = true,
+                ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; },
             };
             _httpClient = new HttpClient(clientHandler)
             {
-                Timeout = TimeSpan.FromSeconds(10)
+                DefaultRequestVersion = HttpVersion.Version11,
+                Timeout = TimeSpan.FromSeconds(10),
+
             };
         }
-        public async Task<HostDto[]> GetHostData(OwnerDto[] ownerDtos,string batchId)
+        public async Task<HostDto[]> GetHostData(OwnerDto[] ownerDtos, string batchId)
         {
-            ThreadSafeCounter counter = new ThreadSafeCounter(){
+            ThreadSafeCounter counter = new ThreadSafeCounter()
+            {
                 goal = ownerDtos.Length
             };
             System.Console.WriteLine("Starting HostData Gathering");
             var hostTasks = ownerDtos.Select(async owner =>
             {
-                return await TryToResolveHost(owner,counter,batchId);
+                return await TryToResolveHost(owner, counter, batchId);
             }).ToArray();
 
             var hostDatas = await Task.WhenAll(hostTasks);
             return hostDatas;
         }
-        private async Task<HostDto> TryToResolveHost(OwnerDto owner,ThreadSafeCounter counter,string batchId)
+        private async Task<HostDto> TryToResolveHost(OwnerDto owner, ThreadSafeCounter counter, string batchId)
         {
             var uri = $"{owner.Provider.host_uri}/status".Replace("https://", "http://");
-            
+
             try
             {
-                var responseMessage = await _httpClient.GetAsync(uri);
-                var messageData = System.Text.Encoding.UTF8.GetBytes(await responseMessage.Content.ReadAsStringAsync());
+
+                var responseMessage = await _httpClient2.GetAsync(uri);
+                var response = await responseMessage.Content.ReadAsStringAsync();
+                var messageData = System.Text.Encoding.UTF8.GetBytes(response);
+
                 var hostDto = new HostDto()
                 {
                     ownerId = owner.OwnerId,
@@ -71,12 +80,12 @@ namespace Proj.Services
                     BatchId = batchId
                 };
             }
-            
+
         }
         public async Task<OwnerDto[]> GetOwnerData(string batchId)
         {
             var output = new List<OwnerDto>();
-            var responseMessage = await _httpClient.GetStringAsync("https://akash-api.polkachu.com/akash/provider/v1beta3/providers");
+            var responseMessage = await _httpClient.GetStringAsync("https://akash-api.polkachu.com/akash/provider/v1beta3/providers?pagination.offset=0&pagination.limit=1");
             var ownerData = JsonSerializer.Deserialize<Root>(responseMessage);
             foreach (var provider in ownerData.providers)
             {

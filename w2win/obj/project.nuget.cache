@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sEXXWvhHUzlOAUIWK3XYfxGc80iBXqiDxVZvCT/xtgrQkqEBaUy3SulSPE1R3mJWQkoFkR5kDRBBdr4X+lDzQQ==",
+  "dgSpecHash": "64X2j+ET4GVzFDmTfKzvTFilRVud45ie7fjlvG13fpnjMfUEcpgJg5TQZ7FA251DsPlILQ2/8v2wneScAQlqqQ==",
   "success": true,
-  "projectFilePath": "Z:\\WINNINGALLTHEMONEY\\w2win\\w2win.csproj",
+  "projectFilePath": "Z:\\akash-archiving-services\\akash-archiving-services\\w2win\\w2win.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sebas\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\sebas\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",

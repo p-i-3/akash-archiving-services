@@ -4276,11 +4276,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "Z:\\WINNINGALLTHEMONEY\\w2win\\w2win.csproj",
+      "projectUniqueName": "Z:\\akash-archiving-services\\akash-archiving-services\\w2win\\w2win.csproj",
       "projectName": "w2win",
-      "projectPath": "Z:\\WINNINGALLTHEMONEY\\w2win\\w2win.csproj",
+      "projectPath": "Z:\\akash-archiving-services\\akash-archiving-services\\w2win\\w2win.csproj",
       "packagesPath": "C:\\Users\\sebas\\.nuget\\packages\\",
-      "outputPath": "Z:\\WINNINGALLTHEMONEY\\w2win\\obj\\",
+      "outputPath": "Z:\\akash-archiving-services\\akash-archiving-services\\w2win\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

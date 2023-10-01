@@ -3,3 +3,8 @@ Z:\WINNINGALLTHEMONEY\obj\Debug\net7.0\WINNINGALLTHEMONEY.GeneratedMSBuildEditor
 Z:\WINNINGALLTHEMONEY\obj\Debug\net7.0\WINNINGALLTHEMONEY.AssemblyInfoInputs.cache
 Z:\WINNINGALLTHEMONEY\obj\Debug\net7.0\WINNINGALLTHEMONEY.AssemblyInfo.cs
 Z:\WINNINGALLTHEMONEY\obj\Debug\net7.0\WINNINGALLTHEMONEY.csproj.CoreCompileInputs.cache
+Z:\akash-archiving-services\akash-archiving-services\obj\Debug\net7.0\WINNINGALLTHEMONEY.csproj.AssemblyReference.cache
+Z:\akash-archiving-services\akash-archiving-services\obj\Debug\net7.0\WINNINGALLTHEMONEY.GeneratedMSBuildEditorConfig.editorconfig
+Z:\akash-archiving-services\akash-archiving-services\obj\Debug\net7.0\WINNINGALLTHEMONEY.AssemblyInfoInputs.cache
+Z:\akash-archiving-services\akash-archiving-services\obj\Debug\net7.0\WINNINGALLTHEMONEY.AssemblyInfo.cs
+Z:\akash-archiving-services\akash-archiving-services\obj\Debug\net7.0\WINNINGALLTHEMONEY.csproj.CoreCompileInputs.cache
